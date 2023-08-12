@@ -1,0 +1,8 @@
+SELECT
+  county_fips_code,county_name,state,state_fips_code,date,confirmed_cases,deaths
+FROM
+  `bigquery-public-data.covid19_usafacts.summary`
+WHERE
+  TIMESTAMP_TRUNC(_PARTITIONTIME, DAY) = TIMESTAMP("2023-08-11")
+LIMIT
+  1000
